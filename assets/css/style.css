@@ -1,0 +1,23 @@
+body {
+	background-image: url("../images/background.jpg");
+	background-size: 500%;
+}
+
+.title {
+	text-align: center;
+	font-size: 150px;
+	color: white;
+}
+
+.topic-buttons {
+	margin: 10px auto;
+}
+
+.gif {
+	width: 50%;
+	display: inline-block;
+}
+
+.rating {
+	color: white;
+}

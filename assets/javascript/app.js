@@ -7,10 +7,10 @@ $(document).ready(function() {
     function createButton() {
         for (var i = 0; i < topics.length; i++) {
 
-            topicBtn = $("<button class='btn btn-primary topic-buttons'>" + topics[i] + "</button>");
+            topicBtn = $("<button class='btn btn-primary topic-buttons'>" + topics[i] + "</button><br>");
             console.log(topicBtn);
 
-            $("#buttons-go-here").append(topicBtn);
+            $("#buttons-go-here").prepend(topicBtn);
             // $("#buttons-go-here").append(userInput); 
 
         };
@@ -46,7 +46,7 @@ $(document).ready(function() {
                     var ratings = results[i].rating;
                     // console.log(ratings); 
 
-                    var ratingHTML = $("<h2>").text("Rating: " + ratings);
+                    var ratingHTML = $("<h2 class='rating'>").text("Rating: " + ratings);
                     // console.log(ratingHTML);
 
                     var animalGifs = $("<img class='gif'>");
@@ -102,11 +102,11 @@ $(document).ready(function() {
         }
         else {
 
-        userInputButton = $("<button class='btn btn-primary topic-buttons'>" + userInput + "</button>");
+        userInputButton = $("<button class='btn btn-primary topic-buttons'>" + userInput + "</button><br>");
         console.log(userInput);
         console.log(userInputButton);
 
-        $("#buttons-go-here").append(userInputButton);
+        $("#buttons-go-here").prepend(userInputButton);
 
         displayGifs();
 
