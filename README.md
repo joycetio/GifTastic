@@ -1,4 +1,4 @@
-# GifTastic
+# HW-GifTastic
 
 # Live Link: 
 https://joycetio.github.io/GifTastic/
