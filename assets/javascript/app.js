@@ -8,7 +8,7 @@ $(document).ready(function() {
         for (var i = 0; i < topics.length; i++) {
 
             topicBtn = $("<button class='btn btn-primary topic-buttons'>" + topics[i] + "</button><br>");
-            console.log(topicBtn);
+            // console.log(topicBtn);
 
             $("#buttons-go-here").prepend(topicBtn);
             // $("#buttons-go-here").append(userInput); 
@@ -23,8 +23,8 @@ $(document).ready(function() {
             // console.log("i've been clicked");
 
             var animal = $(this).html();
-            console.log(this);
-            console.log(animal);
+            // console.log(this);
+            // console.log(animal);
 
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
                 animal + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -35,10 +35,10 @@ $(document).ready(function() {
                 url: queryURL,
                 method: "GET"
             }).done(function(response) {
-                console.log(response);
+                // console.log(response);
 
                 var results = response.data;
-                console.log("results: ", results);
+                // console.log("results: ", results);
 
                 for (var i = 0; i < results.length; i++) {
                     var animalDiv = $("<div>");
@@ -56,7 +56,8 @@ $(document).ready(function() {
                     animalGifs.attr("data-animate", results[i].images.fixed_height.url);
                     animalGifs.attr("data-state", "still");
 
-                    console.log(animalGifs); // console.log("results image still URL: ",results[i].images.fixed_height_still.url);
+                    // console.log(animalGifs); 
+                    // console.log("results image still URL: ",results[i].images.fixed_height_still.url);
 
 
                     animalDiv.append(ratingHTML);
@@ -86,33 +87,31 @@ $(document).ready(function() {
     displayGifs();
 
     $("#submitBtn").on("click", function() {
-        console.log("clicked");
+        // console.log("clicked");
 
         var userInput = $("#animalUserInput").val().trim();
 
-        if ( userInput === ""){
-        	alert("You didn't enter an animal");
+        if (userInput === "") {
+            alert("You didn't enter an animal");
 
-        	$("#animalUserInput").val("");
-        }
-        else if ($.inArray(userInput, topics) != -1) {
-        	alert("Animal already exists");
+            $("#animalUserInput").val("");
+        } else if ($.inArray(userInput, topics) != -1) {
+            alert("Animal already exists");
 
-        	$("#animalUserInput").val("");
-        }
-        else {
+            $("#animalUserInput").val("");
+        } else {
 
-        userInputButton = $("<button class='btn btn-primary topic-buttons'>" + userInput + "</button><br>");
-        console.log(userInput);
-        console.log(userInputButton);
+            userInputButton = $("<button class='btn btn-primary topic-buttons'>" + userInput + "</button><br>");
+            // console.log(userInput);
+            // console.log(userInputButton);
 
-        $("#buttons-go-here").prepend(userInputButton);
+            $("#buttons-go-here").prepend(userInputButton);
 
-        displayGifs();
+            displayGifs();
 
-        $("#animalUserInput").val("");
+            $("#animalUserInput").val("");
 
-    	};
+        };
 
     });
 
